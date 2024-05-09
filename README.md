@@ -9,7 +9,7 @@ To run this application on your local machine, please follow these steps:
 
 Clone this repository using the following command:
 ```
-$ git clone https://github.com/suranjit231/Habit_Tracker.git
+$ git clone https://github.com/suranjit231/Nodejs_Auth-jwt-passwordjs-googleAuth.git
 ```
 Install the required dependencies using the following command:
 ```
