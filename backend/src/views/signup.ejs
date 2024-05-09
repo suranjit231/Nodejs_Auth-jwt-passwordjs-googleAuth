@@ -1,0 +1,61 @@
+
+
+ <div class="main-container">
+    <% if (sucessMsg){ %>
+        <div class="flash-sucess"><h2><%= sucessMsg %></h2></div>
+
+    <% } %>
+   
+    <div class="startButton toggleSignupForm" onclick="toggleSignupForm()">
+        Start
+        <span class="top"></span>
+        <span class="right"></span>
+        <span class="bottom"></span>
+        <span class="left"></span>
+    </div>
+
+    <div class="signup-formContainer">
+        <div class="signup-formWrapper">
+            
+            <div class="header-signup">
+                <h2 class="form-header">Register</h2>
+                <div class="close-signup" onclick="toggleSignupForm()"><i class="fa-solid fa-xmark"></i></div>
+
+            </div>
+
+         
+            <form action="/api/user/signup" id="signup-form" method="post">
+
+                <% if (error){ %>
+                    <div class="error-message"><%= error %></div>
+            
+                <% } %>
+
+                <div class="form-control">
+                    <label for="name"><i class="fa-solid fa-user"></i></label>
+                    <input type="text" name="name" id="name" placeholder="Enter name">
+
+                </div>
+
+                <div class="form-control">
+                    <label for="email"><i class="fas fa-envelope"></i></label>
+                    <input type="text" name="email" id="email" placeholder="Enter email">
+                </div>
+
+                <div class="form-control passwordControl">
+                    <label for="password"><i class="fas fa-lock"></i></label>
+                    <input type="password" name="password" id="password" placeholder="Enter password">
+                    <i class="far fa-eye-slash togglePassword" id="togglePasswordSignup"></i>
+                </div>
+
+                <div class="submit-div"><button type="submit">Signup</button></div>
+
+            </form>
+            <div class="google-div"><a href="/api/user/google"><i class="fa-brands fa-google"></i>oogle login</a></div>
+
+
+        </div>
+    </div>
+
+   
+</div>

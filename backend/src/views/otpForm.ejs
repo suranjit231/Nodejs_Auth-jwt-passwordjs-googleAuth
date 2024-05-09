@@ -1,0 +1,43 @@
+
+
+<div class="otpContainer">
+    <h1 class="otp-heading">Send OTP to your register email <br> for password reset!</h1>
+
+    <div class="startButton otpFormToggle" onclick="toggleOtpForm()">
+        Start
+        <span class="top"></span>
+        <span class="right"></span>
+        <span class="bottom"></span>
+        <span class="left"></span>
+    </div>
+    <div class="otpFormContainer otpFormContainer-show">
+        <div class="otpFormWrapper">
+           
+            <div class="header-signup">
+                <h2 class="form-header">Send OTP</h2>
+                <div class="close-otpForm" onclick="toggleOtpForm()"><i class="fa-solid fa-xmark"></i></div>
+
+            </div>
+
+            <form action="/api/otp/sendOtp" method="post">
+                <% if (error){ %>
+                    <div class="error-message hideMsg"><%= error %></div>
+            
+                <% } %>
+
+
+                <div class="form-control-div">
+                    <label for="otp-email"><i class="fas fa-envelope"></i></label>
+                    <input type="text" name="email" id="otp-email" placeholder="Send email...">
+                </div>
+
+                <div class="submitOtp"><button type="submit">Send OTP</button></div>
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,65 @@
+
+<div class="main-container">
+
+    <% if (sucessMsg){ %>
+        <div class="flash-sucess"><h2><%= sucessMsg %></h2></div>
+        <script>
+            showSuccessMessage();
+        </script>
+
+    <% } %>
+
+    <div class="startButton toggleLoginForm" onclick="toggleLoginForm()">
+        Start
+        <span class="top"></span>
+        <span class="right"></span>
+        <span class="bottom"></span>
+        <span class="left"></span>
+    </div>
+
+    <div class="login-formContainer signup-formContainer-show">
+        <div class="signup-formWrapper">
+            
+            <div class="header-signup">
+                <h2 class="form-header">Login</h2>
+                <div class="close-signup" onclick="toggleLoginForm()"><i class="fa-solid fa-xmark"></i></div>
+
+            </div>
+
+
+            <form action="/api/user/signin" id="signup-form" method="post">
+                <% if (error){ %>
+                    <div class="error-message"><%= error %></div>
+            
+                <% } %>
+
+
+
+
+                <div class="error-message"></div>
+                <div class="form-control">
+                    <label for="email"><i class="fas fa-envelope"></i></label>
+                    <input type="text" name="email" id="email" placeholder="Enter email">
+                </div>
+
+                <div class="form-control passwordControl">
+                    <label for="password"><i class="fas fa-lock"></i></label>
+                    <input type="password" name="password" id="password" placeholder="Enter password">
+                    <i class="far fa-eye-slash togglePassword" id="togglePassword"></i>
+                </div>
+
+                <div class="submit-div"><button type="submit">Login</button></div>
+
+            </form>
+
+            <div class="forgetPasswordLink">
+                <a href="/api/otp/getOtpForm"> Forget password..?</a>
+            </div>
+
+            <div class="google-div"><a href="/auth/google/callback"><i class="fa-brands fa-google"></i>oogle login</a></div>
+
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,565 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body,html{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(2, 1, 10);
+}
+
+/* ----css for nev bar--- */
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    box-shadow: 0px 2px 5px aliceblue;
+}
+
+.left-nev{
+    color: aliceblue;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.right-nev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.right-nev a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* ------css for main section------ */
+.main-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 70px);
+    overflow-y: hidden;
+    flex-direction: column;
+}
+
+.startButton{
+    color: aliceblue;
+    font-size: 30px;
+    font-weight: 800;
+    padding: 10px 30px;
+    border: 1px solid aliceblue;
+    position: relative;
+    border-top: 1px solid rgba(255, 49, 49, 0.5);
+    border-right: 1px solid rgba(0, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(57, 255, 20, 0.5);
+    border-left: 1px solid rgba(255, 255, 113, 0.5);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.startButton:hover{
+    box-shadow:0 0 5px #fff,0 0 15px #0fff,0 0 25px #fff,0 0 50px #fff,0 0 75px #fff,0 0 120px #fff;
+}
+
+
+/* ---------------animation start----------------- */
+
+span {
+  position: absolute;
+  border-radius: 100vmax;
+}
+
+.top {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    transparent 50%,
+    rgba(255, 49, 49, 0.5),
+    rgb(255, 49, 49)
+  );
+}
+
+.bottom {
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    rgb(57, 255, 20),
+    rgba(57, 255, 20, 0.5),
+    transparent 50%
+  );
+}
+
+.right {
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 30%,
+    rgba(0, 255, 255, 0.5),
+    rgb(0, 255, 255)
+  );
+}
+
+.left {
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  height: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(255, 255, 113),
+    rgba(255, 255, 113, 0.5),
+    transparent 70%
+  );
+}
+
+.top {
+  animation: animateTop 3s ease-in-out infinite;
+}
+
+.bottom {
+  animation: animateBottom 3s ease-in-out infinite;
+}
+
+.right {
+  animation: animateRight 3s ease-in-out infinite;
+}
+
+.left {
+  animation: animateLeft 3s ease-in-out infinite;
+}
+
+@keyframes animateTop {
+  25% {
+    width: 100%;
+    opacity: 1;
+  }
+
+  30%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animateBottom {
+  0%,
+  50% {
+    opacity: 0;
+    width: 0;
+  }
+
+  75% {
+    opacity: 1;
+    width: 100%;
+  }
+
+  76%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animateRight {
+  0%,
+  25% {
+    opacity: 0;
+    height: 0;
+  }
+
+  50% {
+    opacity: 1;
+    height: 100%;
+  }
+
+  55%,
+  100% {
+    height: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes animateLeft {
+  0%,
+  75% {
+    opacity: 0;
+    bottom: 0;
+    height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+/* --------------animation end------------------- */
+
+.signup-formContainer{
+   width: 350px;
+    /* height: 430px; */
+    height: auto;
+    border: 1px solid aliceblue;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    position: absolute;
+    top: -100%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.8s ease-in-out; 
+   
+}
+
+.login-formContainer{
+  width: 350px;
+   /* height: 430px; */
+   height: auto;
+   border: 1px solid aliceblue;
+   display: flex;
+   justify-content: center;
+   padding: 15px;
+   position: absolute;
+   top: -100%;  
+   left: 50%;
+   transform: translate(-50%, -50%);
+   transition: top 0.8s ease-in-out; 
+   
+  
+}
+
+
+
+/* ---------signup form show--------- */
+.signup-formContainer-show{
+    top: 50%;
+   
+}
+
+.signup-formContainer-hide{
+    top: -100%;
+   
+}
+
+
+/* ---------signup form hide--------- */
+.signup-formWrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#signup-form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid red; */
+    width: 100%;
+    /* height: 100%; */
+    gap: 15px;
+}
+
+.form-control{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.passwordControl{
+  position: relative;
+}
+
+.form-control input{
+    width: 85%;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+}
+
+.form-control input::placeholder{
+    font-size: 20px;
+    color: gray;
+}
+
+.passwordControl input{
+   
+    padding-right: 50px;
+}
+
+.form-control label{
+    flex: 1;
+    color: aliceblue;
+    font-size: 25px;
+}
+
+.togglePassword{
+    position: absolute;
+    top: 47%;
+    transform: translateY(-50%);
+     right: 10px; 
+    cursor: pointer;
+    z-index: 1;
+    /* color: aliceblue; */
+    color: black;
+   
+} 
+
+.submit-div{
+    margin-top: 20px;
+    width: 85%;
+    /* height: 35px; */
+    align-self: flex-end;
+}
+
+.submit-div button{
+    height: inherit;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 25px;
+    font-weight: 700;
+    background: linear-gradient(180deg,rgba(0, 255, 255, 0.5),rgb(0, 255, 255));
+    border: none;
+    color: blue;
+   transition: 0.4s ease-in-out;
+   cursor: pointer;
+}
+
+.google-div{
+  margin-top: 15px;
+  width: 85%;
+  /* height: 35px; */
+  align-self: flex-end;
+  text-align: center;
+}
+
+.google-div a{
+  height: inherit;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 25px;
+  font-weight: 700;
+  background: linear-gradient(180deg,rgba(72, 255, 0, 0.5),rgb(217, 255, 0));
+  border: none;
+  color: rgb(255, 81, 0);
+ transition: 0.4s ease-in-out;
+ cursor: pointer;
+ text-decoration: none;
+ display: block;
+}
+
+
+.submit-div button:hover{
+    background: linear-gradient(180deg,rgba(0, 255, 255, 0.856),rgb(0, 26, 255));
+    color: rgb(170, 24, 24);
+}
+
+.google-div a:hover{
+  background: linear-gradient(180deg,rgba(255, 0, 34, 0.856),rgb(255, 60, 0));
+  color: rgb(206, 217, 218);
+}
+
+
+.close-signup i{
+    color: aliceblue;
+    font-size: 30px;
+
+}
+
+.header-signup{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.close-signup{
+    flex: 1;
+    cursor: pointer;
+}
+
+.form-header{
+    color: aliceblue;
+    font-size: 30px;
+    width: 90%;
+    text-align: center;
+}
+
+.flash-sucess{
+  position: absolute;
+  /* top:10px; */
+  right: 10px;
+  background: linear-gradient(to right,rgba(0, 255, 255, 0.856),rgb(0, 255, 34));
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -100px;
+  
+}
+
+.flash-sucess h2{
+  color: aliceblue;
+  padding: 10px 20px;
+}
+
+/* ---------flash sucess animation------ */
+@keyframes flash {
+  0% { top: -100px; opacity: 0; }
+  100% { top: 10px; opacity: 1; }
+}
+
+.flash-sucess-animation {
+  animation: flash 1s ease-in-out forwards;
+}
+
+.error-message{
+  color: red;
+}
+
+
+.toggleLoginForm{
+  display: none;
+}
+
+.user-info{
+  color: aliceblue;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.protectedPageContainer{
+  color: aliceblue;
+  height: calc(100% - 70px);
+  width: 100%;
+  position: relative;
+}
+
+
+
+/* animation code */
+
+@keyframes moveit{
+  0% {left: 0%;}
+  100% {left: 100%}
+}
+
+@keyframes bounce{
+  0% {top: 0; transform: scale(1, 1);}
+  80%{transform: scale(0.85, 1);}
+  100% {top: 120px; transform: scale(1.2,0.6);}
+}
+
+@keyframes scaleit{
+  0% {transform: scale(0.4, 0.1); opacity: 0.3;}
+  100% {transform: scale(1, 0.2);}
+}
+
+
+.container{
+  position: absolute;
+  width: auto;
+  height: 200px;
+  margin-top: 10%;
+  right: 82px;
+  left: 0px;
+  bottom: 0;
+}
+
+.ball-container{
+  position: absolute;
+  height: 200px;
+  width: 82px;
+  animation-name: moveit;
+  animation-duration: 8s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.ball{
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  background: radial-gradient(at 20px 20px, rgb(250, 176, 142) 0%, rgb(49, 172, 25) 100%);
+  box-shadow: inset -10px -10px 10px rgba(0, 0, 0, 0.6);
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0,1,.5);
+  animation-iteration-count: infinite;
+}
+
+.ball-shadow{
+  margin-top: 120px;
+  margin-left: -8px;
+  height: 100px;
+  width: 100px;
+  background-color: rgba(0,0,0,0.6);
+  filter: blur(8px);
+  border-radius: 50px;
+  animation-name: scaleit;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0,1,.5);
+  animation-iteration-count: infinite;
+}
+
+
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  border-right: .15em solid orange; 
+  white-space: nowrap;
+  animation: typing 3s steps(40, end) infinite alternate; 
+  font-size: 30px;
+}
+
+.typing-boxWrapper{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+
+/* -----------css for forgetpassowrd---- */
+/* .forgetPasswordLink{
+  margin-top: 20px;
+} */
+
+
+.forgetPasswordLink a{
+  text-decoration: none;
+  font-size: 20px;
+  /* color: aliceblue; */
+  /* margin-top: 50px; */
+}
